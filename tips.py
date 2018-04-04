@@ -1,3 +1,6 @@
+# to check nvidia gpu information, use
+nvidia-smi
+
 # check keras version/location
 print(keras.__version__, keras.__file__)
 
