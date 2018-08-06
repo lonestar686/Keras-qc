@@ -9,3 +9,11 @@ splits = [0, 1.5, 2.5, 3, 4.2, 5.8, 6.5, 7]
 response = np.digitize(preds, splits)
 
 print(response)
+
+# to initialize seeds
+random_seed = 2018
+random.seed(random_seed)
+import numpy as np
+np.random.seed(random_seed)
+import tensorflow as tf
+tf.set_random_seed(random_seed)
