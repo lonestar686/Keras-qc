@@ -1,5 +1,5 @@
 # to check nvidia gpu information, use
-nvidia-smi
+#nvidia-smi
 
 # check keras version/location
 print(keras.__version__, keras.__file__)
@@ -11,6 +11,12 @@ print(tf.__version__, tf.__file__)
 # check devices for tensorflow
 from tensorflow.python.client import device_lib
 print(device_lib.list_local_devices())
+
+# Only make one GPU visible to Tensorflow so that it does not allocate
+# all available memory on all devices.
+# See: https://stackoverflow.com/questions/37893755
+os.environ['CUDA_DEVICE_ORDER'] = 'PCI_BUS_ID'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 # remove redundant white spaces
 a = "bb   cc   dd"
